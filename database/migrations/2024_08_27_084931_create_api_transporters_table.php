@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transporterapi', function (Blueprint $table) {
+        Schema::create('api_transporters', function (Blueprint $table) {
             $table->id();
             $table->string('nospe');
             $table->integer('indekspe');
@@ -80,8 +80,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
-        //
-    }
+    // public function down(): void
+    // {
+    //     Schema::dropIfExists('api_transporters');
+    // }
 };
