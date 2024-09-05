@@ -8,6 +8,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // route api
-Route::get('/transporters', [TransporterController::class, 'index']);
-Route::get('/transporters/{id}', [TransporterController::class, 'show']);
-Route::post('/transporter', [TransporterController::class, 'store']);
+// Route::get('/transporters', [TransporterController::class, 'index']);
+// Route::get('/transporters/{id}', [TransporterController::class, 'show']);
+// Route::post('/transporter', [TransporterController::class, 'store']); 
