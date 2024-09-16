@@ -14,7 +14,7 @@ class TransporterController extends Controller
      */
     public function index()
     {
-        $data = ApiTransporter::orderBy('customer','asc')->get();
+        $data = ApiTransporter::orderBy('nospe','asc')->get();
         return response()->json([
             'status' => true,
             'message'=> 'Data ditemukan',
