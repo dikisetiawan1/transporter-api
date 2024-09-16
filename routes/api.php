@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/transporters', [TransporterController::class, 'index']);
 Route::get('/transporters/{id}', [TransporterController::class, 'show']);
 Route::post('/transporters', [TransporterController::class, 'store']);
+Route::put('/transporters/{id}', [TransporterController::class, 'update']);
