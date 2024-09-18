@@ -12,9 +12,14 @@ return Application::configure(basePath: dirname(__DIR__))
         apiPrefix: 'api/v1',
         health: '/up',
     )
-    ->withMiddleware(function (Middleware $middleware) {
+    // ->withBroadcasting(
+    //     __DIR__.'/../routes/api.php',
+    //     ['prefix' => 'api', 'middleware' => ['api', 'auth:sanctum']],
+    // )
+
+    ->withMiddleware(function (Middleware $middleware) {    
         $middleware->validateCsrfTokens(except: [
-            'http://127.0.0.1:8000/transporter',
+            'http://127.0.0.1:8000/so',
            
         ]);
     })

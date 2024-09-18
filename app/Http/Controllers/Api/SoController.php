@@ -3,18 +3,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\ApiTransporter;
+use App\Models\SoModel;
 use Illuminate\Http\Request;
 
 
-class TransporterController extends Controller
+class SoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = ApiTransporter::orderBy('nospe','asc')->get();
+        $data = SoModel::orderBy('nospe','asc')->get();
         return response()->json([
             'status' => true,
             'message'=> 'Data ditemukan',
@@ -43,11 +43,12 @@ class TransporterController extends Controller
             'pic' => 'required|max:255'
         ]);
 
-        $post = ApiTransporter::create($request->all());
+        $post = SoModel::create($request->all());
 
         return response()->json([
             'status' => true,
             'message'=> 'Sukses memasukkan data'
+            
         ]);
     }
 
@@ -56,7 +57,7 @@ class TransporterController extends Controller
      */
     public function show(string $id)
     {
-        $data = ApiTransporter::find($id);
+        $data = SoModel::find($id);
         if($data){
             return response()->json([
                 'status'=> true,
@@ -76,7 +77,7 @@ class TransporterController extends Controller
      */
     public function update(Request $request, string $id)
     {
-                $data = ApiTransporter::find($id);
+                $data = SoModel::find($id);
 
                 if (!$data) {
                     return response()->json(['message' => 'Data not found'], 404);

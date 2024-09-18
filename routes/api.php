@@ -1,18 +1,19 @@
 <?php
 
-use App\Http\Controllers\Api\TransporterController;
+use App\Http\Controllers\Api\SoController;
+use App\Http\Controllers\Api\AuthController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-// Route::get('/user', function (Request $request) {
-//   return $request->user();
-// })->middleware('auth:sanctum');
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::get('/user', function (Request $request) {
+  return $request->user();
+})->middleware('auth:sanctum');
 
 // route api
-Route::get('/transporters', [TransporterController::class, 'index']);
-Route::get('/transporters/{id}', [TransporterController::class, 'show']);
-Route::post('/transporters', [TransporterController::class, 'store']);
-Route::put('/transporters/{id}', [TransporterController::class, 'update']);
+Route::get('/so', [SoController::class, 'index']);
+Route::get('/so/{id}', [SoController::class, 'show']);
+Route::post('/so', [SoController::class, 'store']);
+Route::put('/so/{id}', [SoController::class, 'update']);
